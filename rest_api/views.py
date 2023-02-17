@@ -21,7 +21,7 @@ def list_post(request):
         return Response(new_student.errors,status.HTTP_400_BAD_REQUEST)
     
 
-@api_view(['GET','DELETE'])
+@api_view(['GET','PUT','DELETE'])
 def posts_details(request,id):
     try:
         student = Students.objects.get(id=id)
@@ -32,6 +32,14 @@ def posts_details(request,id):
         serializer = StudentSerializer(student)
         return Response(serializer.data)
 
-    if request.method == 'DELETE':
+    elif request.method == 'PUT':
+        serializer = StudentSerializer(student,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data,status.HTTP_202_ACCEPTED)
+        return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+
+
+    elif request.method == 'DELETE':
         student.delete()
         return Response(status.HTTP_204_NO_CONTENT)
