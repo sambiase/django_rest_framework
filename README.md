@@ -23,20 +23,22 @@
 
 ## :books: General info
 
-* Django FrameWork API 
+* Django Rest FrameWork API 
 
 
 ## :camera: Screenshots
 
-![screen print](./static/images/app_screenshot.png "Consulta CEP")
+![screen print](./static/images/mainUI.png "Django RestFramework API")
 
+![screen print](./static/images/API_List_Post.png "Django RestFramework API")
+
+![screen print](./static/images/API_details.png "Django RestFramework API")
 
 ## :signal_strength: Technologies
 
 * [Python v3.10](https://www.python.org/)
-* [Django v4.1.5](https://www.djangoproject.com/)
-* [Requests v2.28.2](https://pypi.org/project/requests/)
-* [Gunicorn v20.1.0](https://gunicorn.org/)
+* [Django v4.1.7](https://www.djangoproject.com/)
+* [Django RestFramework v3.14.0](https://www.django-rest-framework.org/)
 * [Python Decouple v3.7](https://pypi.org/project/python-decouple/)
 
 
@@ -47,6 +49,8 @@
   * create a virtual env with Poetry: `poetry init`
   * access the newly created virtual env: `poetry shell`
 * Install Django: `poetry add django`
+* Install Django RestFramework: `poetry add djangorestframework`
+* Install Python Decouple: `poetry add python-decouple`
 
  
 
@@ -56,10 +60,13 @@
   * `python manage.py makemigrations`
   * `python manage.py migrate`
 
+* Run 
+  * `python manage.py runserver`
+
 
 ## :clipboard: ToDo
 
-* ToDo: implement the ability to search for various CEPs at once
+* ToDo: add Tests
 
 
 ## :file_folder: License
