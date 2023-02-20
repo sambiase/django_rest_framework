@@ -4,7 +4,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('api/', ListEmployeesAPIView.as_view()),
-    path('api/details/<int:id>', DetailEmployeesAPIView.as_view()),
+    path('details/<int:pk>', DetailEmployeesAPIView.as_view()),
 
 ]
 

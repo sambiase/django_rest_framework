@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 
 
 @api_view(['GET','POST'])
-def list_post(request):
+def students_list_post(request):
     
     if request.method == 'GET':
         all_students = Students.objects.all()
